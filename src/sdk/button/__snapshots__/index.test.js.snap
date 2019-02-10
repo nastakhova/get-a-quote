@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when have no text 1`] = `
+<button
+  className="button button--edit"
+>
+  edit
+</button>
+`;
+
+exports[`renders correctly when have no type 1`] = `
+<button
+  className="button button--default"
+>
+  edit
+</button>
+`;
+
+exports[`renders correctly when have type and text 1`] = `
+<button
+  className="button button--edit"
+>
+  Edit Trattat
+</button>
+`;
+
+exports[`renders correctly when there are no props 1`] = `
+<button
+  className="button button--default"
+>
+  button
+</button>
+`;

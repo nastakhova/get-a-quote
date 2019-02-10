@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly when there are no quotes 1`] = `
+<p>
+  Uppss... Something goes wrong!
+</p>
+`;
+
+exports[`renders correctly when there quote 1`] = `
+Array [
+  <button
+    className="button button--remove"
+    onClick={[Function]}
+  >
+    x
+  </button>,
+  <blockquote
+    className="quotes-list__quote"
+  >
+    <div
+      className="quotes-list__content"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>Creating something out of thin air is easy. It&#8217;s finding the air that&#8217;s hard.</p>
+",
+        }
+      }
+    />
+    <div
+      className="quotes-list__footer"
+    >
+      <button
+        className="button button--edit"
+        onClick={[Function]}
+      >
+        edit
+      </button>
+      <cite
+        className="quotes-list__cite"
+      >
+        <a
+          href="https://quotesondesign.com/asher-trotter/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Asher Trotter
+        </a>
+      </cite>
+    </div>
+  </blockquote>,
+]
+`;

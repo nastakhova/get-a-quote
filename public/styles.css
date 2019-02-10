@@ -1,0 +1,266 @@
+:root {
+	--mainTextColor: #659cb0;
+	--mainBgColor: #f3e9fe;
+	--linkColor: #398389;
+	--linkColorHover: #97b5d0;
+	--greenColor: #1b6a5d;
+	--sidePadding: 15px;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+
+body {
+	margin: 0;
+	background: var(--mainBgColor);
+	font: 15px/1.5 'Trebuchet MS', Arial, Helvetica, sans-serif;
+	color: var(--mainTextColor);
+}
+
+a {
+	color: var(--linkColor);
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: var(--linkColorHover);
+}
+
+.header {
+	background: var(--greenColor);
+	padding: 15px;
+	box-shadow: 0 0 10px var(--linkColor);
+}
+
+.nav__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	font-weight: bold;
+}
+
+.nav__item {
+	padding: 0 10px;
+}
+
+.nav__item a {
+	color: var(--mainBgColor);
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+}
+
+.nav__item a:after {
+	content: '';
+	width: 0;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	height: 2px;
+	transition: width 0.3s ease;
+	background: currentColor;
+}
+
+.nav__item a:hover:after {
+	width: 100%;
+}
+
+.main {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: var(--sidePadding);
+}
+
+.main h1 {
+	color: var(--greenColor);
+	text-align: center;
+	margin: 0 0 1em;
+	font-size: 30px;
+}
+
+.button {
+	color: #fff;
+	background: var(--linkColor);
+	padding: 10px;
+	border: 2px solid var(--greenColor);
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s ease;
+}
+
+.button--remove {
+	padding: 0;
+	border: 0;
+}
+
+.button:hover {
+	color: var(--linkColor);
+	background: #fff;
+}
+
+.header-main {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 20px;
+}
+
+.quotes-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.quotes-list__item {
+	width: 30%;
+	position: relative;
+	margin: 0 0 20px;
+}
+
+.quotes-list:after {
+	content: '';
+	width: 30%;
+	height: 1px;
+}
+
+.quotes-list__quote {
+	padding: 0;
+	margin: 0;
+}
+
+.quotes-list__item .button--remove {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	color: var(--greenColor);
+	background: none;
+	z-index: 2;
+}
+
+.quotes-list__content {
+	background: #fff;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 15px;
+	border: 1px solid var(--greenColor);
+	position: relative;
+	margin: 0 0 20px;
+}
+
+.quotes-list__cite {
+	display: block;
+	text-align: right;
+	font-size: 12px;
+}
+
+.quotes-list__content:after,
+.quotes-list__content:before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	right: 20px;
+	width: 0;
+	height: 0;
+    border-style: solid;
+    border-width: 15px 15px 0 0;
+    border-color: #fff transparent transparent transparent;
+}
+
+.quotes-list__content:before {
+	border-width: 17px 17px 0 0;
+    border-color: var(--greenColor) transparent transparent transparent;
+    margin-right: -1px;
+}
+
+.quotes-list__footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 5px;
+}
+
+.button--edit {
+	padding: 0;
+	background: none;
+	border: 0;
+	font-weight: normal;
+	color: var(--greenColor);
+	text-decoration: underline;
+	text-transform: capitalize;
+	font-size: 12px;
+}
+
+.button--edit:hover {
+	text-decoration: none;
+	background: none;
+}
+
+.popup {
+	position: fixed;
+	max-width: 600px;
+	width: 100%;
+	padding: var(--sidePadding);
+	background: #fff;
+	border: 1px solid var(--greenColor);
+	border-radius: 5px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+.popup__overlay {
+	content: '';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: var(--greenColor);
+	opacity: 0.7;
+	z-index: 9;
+}
+
+.popup h3 {
+	text-align: center;
+	font-size: 20px;
+	margin: 0 0 20px;
+}
+
+.popup textarea,
+.popup input[type=text] {
+	display: block;
+	width: 100%;
+	height: 200px;
+	resize: none;
+	border: 1px solid var(--greenColor);
+	border-radius: 5px;
+	color: var(--mainTextColor);
+	padding: 10px;
+	font-size: 12px;
+	margin: 0 0 10px;
+}
+
+.popup input[type=text] {
+	height: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .quotes-list__item {
+  	width: 48%;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .quotes-list__item {
+  	width: 100%;
+  }
+}
